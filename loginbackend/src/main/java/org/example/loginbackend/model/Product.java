@@ -17,18 +17,18 @@ public class Product {
     private Long id;
 
     @Column(nullable = false)
-    private String name;          // Tomato
+    private String name; // Tomato
 
     @Column(nullable = false)
-    private String category;      // vegetables, fruits, chips, beverages
+    private String category; // vegetables / fruits / chips / beverages
 
     @Column(nullable = false)
-    private Double price;         // new price
+    private Double price; // new price
 
-    private Double oldPrice;      // optional old price (strike)
+    private Double oldPrice; // optional (strike price)
 
-    private String weight;        // "1 kg", "500 g", "250 ml"
+    private String weight; // "1kg" / "500g" / "1L" / "750ml"
 
-    @Column(length = 1000)
-    private String imageUrl;      // product image
+    @Column(length = 500)
+    private String imageUrl; // image URL
 }

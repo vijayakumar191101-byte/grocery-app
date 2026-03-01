@@ -13,11 +13,14 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
-    public List<Product> getAll() {
-        return productRepository.findAll();
+    public List<Product> getAll(String category) {
+        if (category == null || category.isBlank()) {
+            return productRepository.findAll();
+        }
+        return productRepository.findByCategoryIgnoreCase(category);
     }
 
-    public List<Product> getByCategory(String category) {
-        return productRepository.findByCategoryIgnoreCase(category);
+    public Product create(Product product) {
+        return productRepository.save(product);
     }
 }
